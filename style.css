@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;0,900;1,300&display=swap');
+*{box-sizing: border-box;margin: 0;padding: 0;font-family: 'Poppins', sans-serif;}
+a{text-decoration:none; color: unset; }
+::selection{
+    background-color: white;
+    color: black;
+}
+.cbg{
+    background-color: rgba(0, 0, 0, 0.418);
+    filter: invert(1);
+}
+h1:hover > .circle{
+    background-color: red !important;
+}
+#main .signature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.signature img{width: 100px;}
+.signature a {display: flex; flex-direction: row-reverse;}
+.ds{animation: ds 1s ease-in;
+    margin-right: 10px;
+    z-index: 99 !important;
+    background-color: black;
+}
+@keyframes ds {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.fist{animation: fist 2s ease-in;
+    background-color: black;
+}
+@keyframes fist {
+    0%{opacity: 0; margin-left: -110px;}
+    50%{opacity: 0; margin-left: -110px;}
+    100%{opacity: 1; margin-left: 0;}
+}
+.mouse {
+    margin-top: 30vh;
+    width: 30px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.514);
+    border-radius: 60px;
+    position: relative;
+}
+.mouse::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.623);
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+}
+@keyframes wheel {
+    to {
+        opacity: 0;
+        top: 30px;
+   }
+}
+@-webkit-keyframes wheel {
+    to {
+        opacity: 0;
+        top: 30px;
+   }
+}
+/* Section Two - Company Cards */
+.FlexContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.cd{
+    transition: 0.8s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    width: 25%;
+    opacity: 1;
+}
+.cd h1{font-weight: 300!important;}
+.cd a{
+    padding: 20vh 0;
+}
+.cd img{width: 125px; margin: 3vh 0;}
+.cd p{margin: 0 20px;font-size: 15px;text-transform: capitalize;} 
+.vfw{background-color: #26004C;}
+.dstech{
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.322), rgba(0,0,0, 100)), url('img/abstract.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.cp img{width: 140px; margin-top: -15px;}
+.cp{background-color: #D3C7A5; color: black;}
+.cd:hover{opacity: 1;}
+/* -- Section Third - Effect Text ---  */
+.texture{height: 100vh;}
+.effectText{
+    width: 90vw;
+    margin: 0 5vw;
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 5px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+marquee{width: 78vw;
+margin: 11vw;
+margin-top: -1vh;
+}
+marquee h2{
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: white;
+}
+.contact{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: white;
+    width: 80vw;
+    margin: 0 10vw;
+}
+hr{
+    width: 14vw;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.756);
+}
+address{
+    font-size: 14px;
+}
+.left{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 25vw;
+}
+.left ul{
+    display: flex;
+    flex-direction: row;
+}
+.left ul li{
+    font-size: 21px;
+    list-style: none;
+    padding: 5px 9px;
+}
+li{transition: 0.4s ease-in-out;
+border-radius: 50px;}
+.mail{
+    transition: 0.5s ease-in-out;
+    text-align: left;
+    width: 14vw;
+    padding-left: 9px;
+    color: rgba(255, 255, 255, 0.911);
+    font-weight: 400;
+    list-style: none;
+}
+li:hover.mail{text-align: center;font-weight: 500;}
+.right img{
+    width: 125px;
+}
+.footer{position: relative;}
+.contact li:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+@media only screen and (max-width:500px) {
+    .FlexContainer{
+        position: relative;
+        height: 100vh;
+        margin-top: 0;
+    }
+    .cd{
+    justify-content: flex-start;    
+    height: 50vh;
+    width: 50%;
+    }
+    .cd a{padding: 5vh 0;}
+    .cd img{width: 80px;}
+    .cp img{margin-top: 0;}
+    .cd h1{font-size: 23px;}
+    .cd p{font-size: 14px; margin: 2vh 1vh;}
+    .vfw p{font-size: 10px;}
+    .vfw img{width: 100px;}
+    .dstech {border-top: 1px solid white;}
+    .dstech p{font-size: 12px;}
+    .effectText{
+        width: 80vw;
+        margin: 0 10vw;
+        margin-top: -40vh;
+        margin-bottom: 5vh;
+        text-align: left;
+        font-size: 60px;
+        line-height: 95%;
+        letter-spacing: 5px;
+        font-weight: 900;
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+    }
+    marquee{width: 100%; margin: 0;}
+    marquee h2{font-size: 17px; letter-spacing: 0;}
+    .contact{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left ul{justify-content: center;}
+    .mail{width: 80vw; text-align: center;}
+    .left{width: 95vw;align-items: center;}
+    .right{margin-top: 5vh; margin-bottom: -5vh;}
+    .right img{width: 90px;}
+    
+}
