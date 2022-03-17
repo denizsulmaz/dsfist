@@ -5,13 +5,277 @@ a{text-decoration:none; color: unset; }
     background-color: white;
     color: black;
 }
-.cbg{
-    background-color: rgba(0, 0, 0, 0.418);
-    filter: invert(1);
+/* Modal  */
+.modal h2 svg{
+    width: 50px;
+    height: 50px;
 }
-h1:hover > .circle{
-    background-color: red !important;
+html.modal-active, body.modal-active {
+    overflow: hidden;
 }
+#modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 3;
+}
+#modal-container.six {
+    transform: scale(1);
+}
+#modal-container.six .modal-background {
+    z-index: 3;
+    background: rgba(0, 0, 0, .0);
+    animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modal-container.six .modal-background .modal h2, #modal-container.six .modal-background .modal p {
+    opacity: 0;
+    position: relative;
+    animation: modalContentFadeIn 0.3s 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.six.out {
+    animation: quickScaleDown 0s 0.5s linear forwards;
+}
+#modal-container.six.out .modal-background {
+    animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.six.out .modal-background .modal {
+    animation: modalFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.six.out .modal-background .modal h2, #modal-container.six.out .modal-background .modal p {
+    animation: modalContentFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modal-container .modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.966);
+    text-align: left;
+    vertical-align: middle;
+}
+#modal-container .modal-background .modal {
+    background: rgb(39, 37, 37) !important;
+    text-align: left !important;
+    color: white;
+    padding: 50px;
+    display: inline-block;
+    border-radius: 20px;
+    outline: none;
+    font-weight: 300;
+    position: relative;
+    width: 65vw;
+    margin: 0 17.5vw;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#modal-container .modal-background .modal h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+#modal-container .modal-background .modal p {
+    font-size: 18px;
+    line-height: 22px;
+}
+#modal-container .modal-background .modal .modal-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+.content {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    z-index: 1;
+    position: fixed;
+    padding: 10px 2px;
+    border-bottom-left-radius: 20px;
+    top: 0px;
+    right: 0px;
+}
+
+.content .buttons {
+    margin: 0 auto;
+    background-color: black;
+    padding: 0 15px;
+    text-align: center;
+}
+.content .buttons .button {
+    transition: 0.3s ease-in-out;
+    opacity: 0.7;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.button svg{
+    width: 40px;
+    height: 40px;
+}
+.content .buttons .button:hover {
+    opacity: 1;
+}
+@keyframes unfoldIn {
+    0% {
+        transform: scaleY(0.005) scaleX(0);
+   }
+    50% {
+        transform: scaleY(0.005) scaleX(1);
+   }
+    100% {
+        transform: scaleY(1) scaleX(1);
+   }
+}
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+   }
+    50% {
+        transform: scaleY(0.005) scaleX(1);
+   }
+    100% {
+        transform: scaleY(0.005) scaleX(0);
+   }
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+   }
+    100% {
+        transform: scale(1);
+   }
+}
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+   }
+    100% {
+        transform: scale(0);
+   }
+}
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, .0);
+   }
+    100% {
+        background: rgba(0, 0, 0, .7);
+   }
+}
+@keyframes fadeOut {
+    0% {
+        background: rgba(0, 0, 0, .7);
+   }
+    100% {
+        background: rgba(0, 0, 0, .0);
+   }
+}
+
+@keyframes scaleBack {
+    0% {
+        transform: scale(1);
+   }
+    100% {
+        transform: scale(0.85);
+   }
+}
+@keyframes scaleForward {
+    0% {
+        transform: scale(0.85);
+   }
+    100% {
+        transform: scale(1);
+   }
+}
+@keyframes quickScaleDown {
+    0% {
+        transform: scale(1);
+   }
+    99.9% {
+        transform: scale(1);
+   }
+    100% {
+        transform: scale(0);
+   }
+}
+@keyframes slideUpLarge {
+    0% {
+        transform: translateY(0%);
+   }
+    100% {
+        transform: translateY(-100%);
+   }
+}
+@keyframes slideDownLarge {
+    0% {
+        transform: translateY(-100%);
+   }
+    100% {
+        transform: translateY(0%);
+   }
+}
+
+@keyframes sketchIn {
+    0% {
+        stroke-dashoffset: 778;
+   }
+    100% {
+        stroke-dashoffset: 0;
+   }
+}
+@keyframes sketchOut {
+    0% {
+        stroke-dashoffset: 0;
+   }
+    100% {
+        stroke-dashoffset: 778;
+   }
+}
+@keyframes modalFadeIn {
+    0% {
+        background-color: transparent;
+   }
+    100% {
+        background-color: white;
+   }
+}
+@keyframes modalFadeOut {
+    0% {
+        background-color: white;
+   }
+    100% {
+        background-color: transparent;
+   }
+}
+@keyframes modalContentFadeIn {
+    0% {
+        opacity: 0;
+        top: -20px;
+   }
+    100% {
+        opacity: 1;
+        top: 0;
+   }
+}
+@keyframes modalContentFadeOut {
+    0% {
+        opacity: 1;
+        top: 0px;
+   }
+    100% {
+        opacity: 0;
+        top: -20px;
+   }
+}
+
+
+
+
+/* Modal F */
 #main .signature{
     display: flex;
     align-items: center;
