@@ -456,14 +456,14 @@ li:hover.mail{text-align: center;font-weight: 500;}
         margin-top: 0;
     }
     .cd{
-    justify-content: flex-start;    
+    justify-content: flex-end;    
     height: 50vh;
     width: 50%;
     }
     .cd a{padding: 5vh 0;}
     .cd img{width: 80px;}
     .cp img{margin-top: 0;}
-    .cd h1{font-size: 23px;}
+    .cd h1{font-size: 21px;}
     .cd p{font-size: 14px; margin: 2vh 1vh;}
     .vfw p{font-size: 10px;}
     .vfw img{width: 100px;}
@@ -493,5 +493,6 @@ li:hover.mail{text-align: center;font-weight: 500;}
     .left{width: 95vw;align-items: center;}
     .right{margin-top: 5vh; margin-bottom: -5vh;}
     .right img{width: 90px;}
-    
+    .button svg{width: 25px;height: 25px;}
+    .modal{width: 92vw !important;margin: 0 4vw !important;}
 }
