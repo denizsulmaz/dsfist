@@ -58,7 +58,7 @@ html.modal-active, body.modal-active {
 }
 #modal-container .modal-background .modal {
     background: rgb(39, 37, 37) !important;
-    text-align: left !important;
+    text-align: center;
     color: white;
     padding: 50px;
     display: inline-block;
@@ -71,7 +71,7 @@ html.modal-active, body.modal-active {
     height: 80vh;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
 }
 #modal-container .modal-background .modal h2 {
@@ -103,7 +103,7 @@ html.modal-active, body.modal-active {
 .content .buttons {
     margin: 0 auto;
     background-color: black;
-    padding: 0 15px;
+    padding: 0 10px;
     text-align: center;
 }
 .content .buttons .button {
@@ -114,8 +114,8 @@ html.modal-active, body.modal-active {
     cursor: pointer;
 }
 .button svg{
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
 }
 .content .buttons .button:hover {
     opacity: 1;
@@ -366,6 +366,16 @@ html.modal-active, body.modal-active {
     background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.322), rgba(0,0,0, 100)), url('img/abstract.png');
     background-repeat: no-repeat;
     background-size:cover;
+    backdrop-filter: blur(5px);
+}
+.blur{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: flex-end;
 }
 .cp img{width: 140px; margin-top: -15px;}
 .cp{background-color: #D3C7A5; color: black;}
